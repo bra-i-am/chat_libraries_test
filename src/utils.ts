@@ -1,5 +1,5 @@
 import { MessageModel } from '@chatscope/chat-ui-kit-react';
-import { TCurrentUser, TMessage } from './types';
+import { TUser, TMessage } from './types';
 import { MessageType as ChatElementsMessageType } from 'react-chat-elements';
 import MessageType from '@minchat/react-chat-ui/dist/types/MessageType';
 
@@ -13,7 +13,7 @@ export const adaptChatUIMessages = (messages: TMessage[]): MessageType[] => {
 	});
 };
 
-export const adaptChatScopeMessages = (messages: TMessage[], currentUser: TCurrentUser): MessageModel[] => {
+export const adaptChatScopeMessages = (messages: TMessage[], currentUser: TUser): MessageModel[] => {
 	return messages.map((message) => {
 		return {
 			message: message.text,
@@ -24,10 +24,7 @@ export const adaptChatScopeMessages = (messages: TMessage[], currentUser: TCurre
 	});
 };
 
-export const adaptChatElementsMessages = (
-	messages: TMessage[],
-	currentUser: TCurrentUser,
-): ChatElementsMessageType[] => {
+export const adaptChatElementsMessages = (messages: TMessage[], currentUser: TUser): ChatElementsMessageType[] => {
 	return messages.map((message) => {
 		return {
 			text: message.text,

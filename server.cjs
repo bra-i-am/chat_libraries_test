@@ -9,6 +9,7 @@ const io = require('socket.io')(server, {
 		methods: ['GET', 'POST'],
 	},
 });
+
 const messages = [
 	{
 		user: { id: 'car', name: 'Carlos' },
@@ -24,6 +25,8 @@ const messages = [
 	},
 ];
 
+let usersTyping = [];
+
 app.use(cors());
 
 server.listen(8080, function () {
@@ -38,5 +41,18 @@ io.on('connection', function (socket) {
 		messages.push(data);
 
 		io.sockets.emit('messages', messages);
+	});
+
+	socket.on('start-typing', function (user) {
+		usersTyping.push(user);
+
+		io.sockets.emit('users-typing', usersTyping);
+	});
+
+	socket.on('stop-typing', function (user) {
+		const withUserRemoved = usersTyping.filter((userTyping) => userTyping.id !== user.id);
+		usersTyping = withUserRemoved;
+
+		io.sockets.emit('users-typing', usersTyping);
 	});
 });

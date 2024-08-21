@@ -6,7 +6,7 @@ export type TMessage = {
 	text: string;
 };
 
-export type TCurrentUser = {
+export type TUser = {
 	id: string;
 	name: string;
 } | null;
