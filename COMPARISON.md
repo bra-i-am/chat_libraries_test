@@ -8,6 +8,8 @@ To make a better decision about which library to use, it'll be provided informat
 
 ### [React Chat UI: MinChat](https://github.com/MinChatHQ/react-chat-ui)
 
+![image](https://github.com/user-attachments/assets/51b3c390-baaf-4477-8614-0b3a045d4724)
+
 #### Personal Score: 8/10
 
 - Ease of Use: 9.5/10 -> Easy to have a working implementation; [example of use](src/chat_components/ChatUI.tsx). It counts with proper interfaces, hooks and props to use, add or remove components (`customTypingIndicatorComponent`, `onStartTyping`, `onEndTyping`, etc.) 
@@ -20,6 +22,8 @@ The last version was publish 6 months ago. The documentation is lacking, but the
 
 ### [Chat UI Kit: ChatScope](https://github.com/chatscope/chat-ui-kit-react)
 
+![image](https://github.com/user-attachments/assets/732ca413-86be-44be-a480-96655dfc5960)
+
 #### Personal Score: 9.3/10
 
 - Ease of Use: 9.5/10 -> A little more complex but flexible implementation due to the components count with more customizable interfaces and props that intend to execute some processes manually like the need of using a `onChange` listener in the `MessageInput` component to manage the `typingIndicator`; [example of use](src/chat_components/ChatScope.tsx)
@@ -31,6 +35,8 @@ The last version was publish 6 months ago. The documentation is lacking, but the
 The last version was publish 6 months ago. The library has a steeper learning curve due to its extensive implementation attributes, but offers a high degree of customization. Its size is **767KB** The documentation is excellent, providing a comprehensive guide to the library's features and usage. ChatScope has a much higher number of weekly downloads (14,569) [NPM Comparison][1]. The library's GitHub page shows this library is pretty known with 1.226 stars despite of its small community with 5 contributors, 10 successful PRs and 49 open issues.
 
 ### [React Chat Elements](https://github.com/Detaysoft/react-chat-elements)
+
+![image](https://github.com/user-attachments/assets/6a409b88-c234-4c5e-9df6-73dca4ccadbb)
 
 #### Personal Score: 8/10
 
