@@ -8,12 +8,11 @@ To make a better decision about which library to use, it'll be provided informat
 
 ### [React Chat UI: MinChat](https://github.com/MinChatHQ/react-chat-ui)
 
+#### Personal Score: 8/10
 
-#### Personal Score: 7.5/10
-
-- Ease of Use: 9/10 -> Easy to have a working implementation; [example of use](src/chat_components/ChatUI.tsx)
-- Customization: 8/10 -> Customizable through a [JS object and color codes](https://github.com/MinChatHQ/react-chat-ui?tab=readme-ov-file#modify-component-colors) or modifying the color of the [chat provider](https://github.com/MinChatHQ/react-chat-ui#:~:text=%3CMinChatUiProvider%20theme%3D%22%236ea9d7%22%3E)
-- Documentation: 6/10 -> Not as good as desired, but has some [Storybook components](https://github.com/MinChatHQ/react-chat-ui/tree/master/stories) and it's implemented with TypeScript
+- Ease of Use: 9.5/10 -> Easy to have a working implementation; [example of use](src/chat_components/ChatUI.tsx). It counts with proper interfaces, hooks and props to use, add or remove components (`customTypingIndicatorComponent`, `onStartTyping`, `onEndTyping`, etc.) 
+- Customization: 8/10 -> Customizable through a [JS object and color codes](https://github.com/MinChatHQ/react-chat-ui?tab=readme-ov-file#modify-component-colors) or modifying the color of the [chat provider](https://github.com/MinChatHQ/react-chat-ui#:~:text=%3CMinChatUiProvider%20theme%3D%22%236ea9d7%22%3E). Nevertheless, this library intends to keep the components main design, so they don't count with `style` prop or any further possibility for customized changes
+- Documentation: 7/10 -> Not as good as desired, but has some [Storybook components](https://github.com/MinChatHQ/react-chat-ui/tree/master/stories) and it's implemented with TypeScript; the components are not too complex 
 
 #### Additional Notes:
 
@@ -21,10 +20,10 @@ The last version was publish 6 months ago. The documentation is lacking, but the
 
 ### [Chat UI Kit: ChatScope](https://github.com/chatscope/chat-ui-kit-react)
 
-#### Personal Score: 9.5/10
+#### Personal Score: 9.3/10
 
-- Ease of Use: 8.5/10 -> More complex implementation due to the components count with more customizable attributes and manual processes; [example of use](src/chat_components/ChatScope.tsx)
-- Customization: 9/10 -> Customizable through [SCSS variable overrides](https://github.com/chatscope/chat-ui-kit-styles/issues/5), offering a high degree of customization
+- Ease of Use: 9.5/10 -> A little more complex but flexible implementation due to the components count with more customizable interfaces and props that intend to execute some processes manually like the need of using a `onChange` listener in the `MessageInput` component to manage the `typingIndicator`; [example of use](src/chat_components/ChatScope.tsx)
+- Customization: 9/10 -> Customizable through [SCSS variable overrides](https://github.com/chatscope/chat-ui-kit-styles/issues/5) or directly through inline styles offering a high degree of customization. Moreover, this library has a lot of independent components 
 - Documentation: 9.5/10 -> Fully created in [Storybook](https://chatscope.io/storybook/react/?path=/docs/documentation-introduction--docs), complete and well-maintained
 
 #### Additional Notes:
@@ -35,8 +34,8 @@ The last version was publish 6 months ago. The library has a steeper learning cu
 
 #### Personal Score: 8/10
 
-- Ease of Use: 8/10 -> Much more complex implementation due to the components count with more customizable attributes and manual processes; [example of use](src/chat_components/ChatElements.tsx)
-- Customization: 7/10 -> Ambiguous. No explicit theming option, but can be added custom classNames to some components
+- Ease of Use: 8/10 -> The available components we can use aren't a lot, but have the main required covered. Have good components to compose via props, but it will need the execution of manual processes (creation of `typingIndicator` component and `onChange` listener management, useRef management for submissions, component containers creation); [example of use](src/chat_components/ChatElements.tsx)
+- Customization: 7/10 -> Ambiguous. No explicit theming option, but can be added custom classNames to some components.
 - Documentation: 8.5/10 -> [Complete enough](https://detaysoft.github.io/docs-react-chat-elements/docs/intro/)
 
 ##### Additional Notes:
@@ -47,8 +46,8 @@ The last version was publish 2 months ago. The library has a similar complexity 
 
 | Library             | Ease of Use | Customization | Documentation |
 |---------------------|-------------|---------------|---------------|
-| MinChat             | 9/10        | 8/10          | 6/10          |
-| ChatScope           | 8.5/10      | 9/10          | 9.5/10        |
+| MinChat             | 9.5/10      | 8/10          | 7/10          |
+| ChatScope           | 9.5/10      | 9/10          | 9/10          |
 | React Chat Elements | 8/10        | 7/10          | 8.5/10        |
 
 [1]: https://npm-compare.com/@chatscope/chat-ui-kit-react,@minchat/react-chat-ui,react-chat-elements "NPM Comparisson"

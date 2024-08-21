@@ -45,64 +45,59 @@ const ChatScope: FC<IChatScope> = ({
 	}, [inputText]);
 
 	return (
-		<div style={{ position: 'relative', height: '500px' }}>
-			<MainContainer>
-				<ChatContainer>
-					<ConversationHeader>
-						<ConversationHeader.Content userName="GROUP NAME" />
-						<ConversationHeader.Actions>
-							<div style={{ display: 'flex', gap: '1rem', alignItems: 'center', justifyContent: 'end' }}>
-								<CustomButton>Finish</CustomButton>
-								<CustomButton>Share</CustomButton>
-							</div>
-						</ConversationHeader.Actions>
-					</ConversationHeader>
-
-					<MessageList
-						typingIndicator={
-							typingUsers?.length ? <TypingIndicator content={`${typingUsers[0]?.name} is typing...`} /> : null
-						}
+		<MainContainer style={{ position: 'relative', height: '500px' }}>
+			<ChatContainer>
+				<ConversationHeader>
+					<ConversationHeader.Content userName="GROUP NAME" />
+					<ConversationHeader.Actions
+						style={{ display: 'flex', gap: '1rem', alignItems: 'center', justifyContent: 'end' }}
 					>
-						{messages.map((message) => (
-							<Message
-								avatarPosition={message.direction === 'incoming' ? 'center-left' : 'center-right'}
-								model={message}
-							>
-								<Avatar name={message.sender} size="sm" src="avatar.jpg" />
-								<Message.Header>{message.sender}</Message.Header>
-							</Message>
-						))}
-					</MessageList>
-					<MessageInput
-						attachButton={false}
-						onChange={(text: string) => {
-							setInputText(text);
-							return text;
-						}}
-						placeholder="Type message here"
-						onSend={(message) => handleSendMessage(message)}
-					/>
-				</ChatContainer>
+						<CustomButton>Finish</CustomButton>
+						<CustomButton>Share</CustomButton>
+					</ConversationHeader.Actions>
+				</ConversationHeader>
 
-				<Sidebar position="right">
-					<div
-						style={{
-							display: 'flex',
-							flexDirection: 'column',
-							gap: '0.5rem',
-							backgroundColor: '#fff',
-							padding: '1rem',
-						}}
-					>
-						<UserCard user={currentUser} />
-						<UserCard user={currentUser} />
-						<UserCard user={currentUser} />
-						<UserCard user={currentUser} />
-						<UserCard user={currentUser} />
-					</div>
-				</Sidebar>
-			</MainContainer>
-		</div>
+				<MessageList
+					typingIndicator={
+						typingUsers?.length ? <TypingIndicator content={`${typingUsers[0]?.name} is typing...`} /> : null
+					}
+				>
+					{messages.map((message) => (
+						<Message avatarPosition={message.direction === 'incoming' ? 'center-left' : 'center-right'} model={message}>
+							<Avatar name={message.sender} size="sm" src="avatar.jpg" />
+							<Message.Header>{message.sender}</Message.Header>
+						</Message>
+					))}
+				</MessageList>
+
+				<MessageInput
+					attachButton={false}
+					onChange={(text: string) => {
+						setInputText(text);
+						return text;
+					}}
+					placeholder="Type message here"
+					onSend={(message) => handleSendMessage(message)}
+				/>
+			</ChatContainer>
+
+			<Sidebar
+				position="right"
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					gap: '0.5rem',
+					backgroundColor: '#fff',
+					padding: '1rem',
+				}}
+			>
+				<UserCard user={currentUser} />
+				<UserCard user={currentUser} />
+				<UserCard user={currentUser} />
+				<UserCard user={currentUser} />
+				<UserCard user={currentUser} />
+			</Sidebar>
+		</MainContainer>
 	);
 };
 

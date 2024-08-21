@@ -53,6 +53,7 @@ const ChatUI: FC<IChatUI> = ({
 							</div>
 						</div>
 					</MessageHeader>
+
 					<div style={{ display: 'flex', maxHeight: '500px' }}>
 						<div style={{ minWidth: '60%' }}>
 							<MessageList
